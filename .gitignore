@@ -3,3 +3,6 @@ artifacts/
 Anime_Recommendatiom_System.egg-info/
 logs/
 .vscode/
+__pycache__/
+*.pyc
+*.dvc
