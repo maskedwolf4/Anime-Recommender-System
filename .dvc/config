@@ -1,0 +1,4 @@
+[core]
+    remote = dvcgs
+['remote "dvcgs"']
+    url = gs://dvc-bucket-rs1/
