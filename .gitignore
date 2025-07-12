@@ -1,13 +1,40 @@
+# Python virtual environment
 venv/
-artifacts/raw/
+.venv/
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Logs
+logs/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# DVC cache directory (usually .dvc/cache or specified otherwise)
+.dvc/cache/
+
+# DVC config, internal files (usually not manually ignored, dvc handles this)
+# .dvc/tmp/
+# .dvc/config (if you don't want to track it)
+
+# The actual data directories/files that DVC manages.
+# These will often be automatically added by DVC when you run `dvc add`.
+artifacts/raw/  
 artifacts/processed/
 artifacts/model/
 artifacts/weights/
 artifacts/model_checkpoint/
 
-Anime_Recommendatiom_System.egg-info/
-logs/
-.vscode/
-__pycache__/
-*.pyc
-*.dvc
+# DVC metadata files (*.dvc) MUST NOT BE IGNORED by Git.
+# If you have a general ignore like `*.dvc`, you MUST negate it.
+# The most common DVC setup is to *not* have `*.dvc` in .gitignore at all,
+# and let DVC itself manage the specific .gitignore entries for the *data files*.
+# If you absolutely need a blanket ignore for .dvc, then:
+# !*.dvc # <--- Keep this if you have other blanket .dvc ignores, but it's generally not needed.
