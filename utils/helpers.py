@@ -58,7 +58,7 @@ def find_similar_animes(name, path_anime_weights, path_anime2anime_encoded, path
        
 
        
-        anime_frame = getAnimeFrame(decoded_id, df)
+        anime_frame = getAnimeFrame(decoded_id, path_anime_df)
 
         anime_name = anime_frame.eng_version.values[0]
         genre = anime_frame.Genres.values[0]
@@ -166,7 +166,7 @@ def get_user_recommendation(similar_users, user_pref,path_anime_df, path_rating_
             n_user_pref = sorted_list[sorted_list.index == anime_name].values[0][0]
             
             if isinstance(anime_name,str):
-                frame = getAnimeFrame(anime_name, df)
+                frame = getAnimeFrame(anime_name, path_anime_df)
                 anime_id = frame.anime_id.values[0]
                 genre = frame.Genres.values[0]
                 synopsis = getSynopsis(int(anime_id),path_synopsis_df)
