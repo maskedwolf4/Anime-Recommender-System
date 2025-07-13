@@ -23,7 +23,7 @@ pipeline{
                     sh '''
                     python -m venv ${VENV_DIR}
                     . ${VENV_DIR}/bin/activate
-                    pip3 install --upgarde pip
+                    python -m pip install --upgrade pip
                     pip3 install -e .
                     pip3 install dvc
                     '''
