@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ars-app-cluster-1 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ars-app-cluster-1 
+  template:
+    metadata:
+      labels:
+        app: ars-app-cluster-1 
+    spec:
+      containers:
+      - name: ars-app-container
+        image: gcr.io/western-will-465217-v8/ars-project:latest
+        ports:
+        - containerPort: 5000  # Replace with the port your app listens on
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ars-app-cluster-1 -service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ars-app-cluster-1 
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
